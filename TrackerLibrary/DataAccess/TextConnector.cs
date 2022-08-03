@@ -2,6 +2,7 @@
 using TrackerLibrary.DataAccess.TextHelpers;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace TrackerLibrary.DataAccess
 {
@@ -60,6 +61,11 @@ namespace TrackerLibrary.DataAccess
             return model;
 
 
+        }
+
+        public List<PersonModel> GetPerson_All()
+        {
+            return PeopleFile.FullFilePath().LoadFile().ConvertToPersonModels();
         }
     }
 }
