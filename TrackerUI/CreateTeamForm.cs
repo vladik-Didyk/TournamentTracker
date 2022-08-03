@@ -147,5 +147,17 @@ namespace TrackerUI
 
 
         }
+
+        private void createTeamButton_Click(object sender, EventArgs e)
+        {
+            TeamModel newTeam = new TeamModel();
+
+            newTeam.TeamName = tournamentNameValue.Text;
+            newTeam.TeamMembers = selectedTeamMembers;
+
+            newTeam = GlobalConfig.Connection.CreateTeam(newTeam);
+
+            // TODO - If we aren't closing this from after creation, reset the form
+        }
     }
 }

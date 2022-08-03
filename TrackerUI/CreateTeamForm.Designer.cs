@@ -129,7 +129,7 @@ namespace TrackerUI
             this.addNewMemberGroupbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.addNewMemberGroupbox.Location = new System.Drawing.Point(54, 394);
             this.addNewMemberGroupbox.Name = "addNewMemberGroupbox";
-            this.addNewMemberGroupbox.Size = new System.Drawing.Size(351, 314);
+            this.addNewMemberGroupbox.Size = new System.Drawing.Size(351, 295);
             this.addNewMemberGroupbox.TabIndex = 21;
             this.addNewMemberGroupbox.TabStop = false;
             this.addNewMemberGroupbox.Text = "Add New Member";
@@ -142,7 +142,7 @@ namespace TrackerUI
             this.createMemberButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createMemberButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createMemberButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.createMemberButton.Location = new System.Drawing.Point(47, 251);
+            this.createMemberButton.Location = new System.Drawing.Point(47, 229);
             this.createMemberButton.Name = "createMemberButton";
             this.createMemberButton.Size = new System.Drawing.Size(223, 44);
             this.createMemberButton.TabIndex = 20;
@@ -258,12 +258,13 @@ namespace TrackerUI
             this.createTeamButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createTeamButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createTeamButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.createTeamButton.Location = new System.Drawing.Point(306, 714);
+            this.createTeamButton.Location = new System.Drawing.Point(299, 714);
             this.createTeamButton.Name = "createTeamButton";
             this.createTeamButton.Size = new System.Drawing.Size(257, 70);
             this.createTeamButton.TabIndex = 26;
             this.createTeamButton.Text = "Create Team";
             this.createTeamButton.UseVisualStyleBackColor = true;
+            this.createTeamButton.Click += new System.EventHandler(this.createTeamButton_Click);
             // 
             // CreateTeamForm
             // 
