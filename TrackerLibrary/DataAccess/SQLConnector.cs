@@ -22,7 +22,9 @@ namespace TrackerLibrary.DataAccess
                 parameters.Add("@CellphoneNumber", model.CellphoneNumber);
                 parameters.Add("@id", 1, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
-                connection.Execute("dbo.spPeople_Insert", parameters, commandType: CommandType.StoredProcedure);
+                connection.Execute("dbo.spPeople_Insert", 
+                    parameters, 
+                    commandType: CommandType.StoredProcedure);
 
                 model.Id = parameters.Get<int>("@id");
 
@@ -49,7 +51,8 @@ namespace TrackerLibrary.DataAccess
                     dbType: DbType.Int32, 
                     direction: ParameterDirection.Output); 
 
-                connection.Execute("dbo.spPrizes_Insert", parameters, commandType: CommandType.StoredProcedure);
+                connection.Execute("dbo.spPrizes_Insert", parameters, 
+                    commandType: CommandType.StoredProcedure);
 
                 model.Id = parameters.Get<int>("@id");
 
@@ -78,7 +81,9 @@ namespace TrackerLibrary.DataAccess
                     dbType: DbType.Int32, 
                     direction: ParameterDirection.Output);
 
-                connection.Execute("dbo.spTeams_Insert", parameters, commandType: CommandType.StoredProcedure);
+                connection.Execute("dbo.spTeams_Insert", 
+                    parameters, 
+                    commandType: CommandType.StoredProcedure);
 
                 model.Id = parameters.Get<int>("@id");
 
@@ -88,10 +93,34 @@ namespace TrackerLibrary.DataAccess
                     parameters.Add("@TeamId", model.Id);
                     parameters.Add("@PersonId", teamMember.Id);
                     
-                    connection.Execute("dbo.spTeamMembers_Insert", parameters, commandType: CommandType.StoredProcedure);
+                    connection.Execute("dbo.spTeamMembers_Insert", 
+                        parameters, 
+                        commandType: CommandType.StoredProcedure);
                 }
                 return model;
             }
+        }
+
+        public List<TeamModel> GetTeam_All()
+        {
+            List<TeamModel> output;
+
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                output = connection.Query<TeamModel>("dbo.spTeam_GetAll").ToList();
+
+                foreach (TeamModel team in output)
+                {
+                    DynamicParameters parameters = new DynamicParameters();
+                    parameters.Add("@TeamId", team.Id);
+
+                    team.TeamMembers = connection.Query<PersonModel>("dbo.spTeamMembers_GetByTeam", 
+                        parameters, 
+                        commandType: CommandType.StoredProcedure).ToList();
+                }
+            }
+
+            return output;
         }
     }
 }
