@@ -9,40 +9,14 @@ namespace TrackerUI
 {
     public partial class CreatePrizeForm : Form
     {
-        public CreatePrizeForm()
+        IPrizeRequester callingForm;
+        public CreatePrizeForm(IPrizeRequester caller)
         {
             InitializeComponent();
+
+            callingForm = caller;
         }
-
-        private void createTeamLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void createPrizeButton_Click(object sender, EventArgs e)
-        {
-            if (ValidateForm())
-            {
-                PrizeModel model = new PrizeModel(
-                    placeNameValue.Text,
-                    placeNumberValue.Text,
-                    prizeAmountValue.Text,
-                    prizePercentageValue.Text);
-
-                GlobalConfig.Connection.CreatePrize(model);
-                MessageBox.Show(@"This form is valid, saved to DB.");
-                
-
-                placeNameValue.Text = "";
-                placeNumberValue.Text = "";
-                prizeAmountValue.Text = "0";
-                prizePercentageValue.Text = "0";
-            }
-            else
-            {
-                MessageBox.Show(@"This form has invalid information. Please check it and try again.");
-            }
-        }
+    
 
         private bool ValidateForm()
         {
@@ -85,6 +59,30 @@ namespace TrackerUI
             }
 
             return output;
+        }
+
+        private void createPrizeButton_Click(object sender, EventArgs e)
+        {
+            if (ValidateForm())
+            {
+                PrizeModel model = new PrizeModel(
+                    placeNameValue.Text,
+                    placeNumberValue.Text,
+                    prizeAmountValue.Text,
+                    prizePercentageValue.Text);
+
+                GlobalConfig.Connection.CreatePrize(model);
+                MessageBox.Show(@"This form is valid, saved to DB.");
+
+                callingForm.PrizeComplete(model);
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(@"This form has invalid information. Please check it and try again.");
+            }
+
         }
     }
 }

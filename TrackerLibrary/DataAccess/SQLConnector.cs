@@ -51,7 +51,8 @@ namespace TrackerLibrary.DataAccess
                     dbType: DbType.Int32, 
                     direction: ParameterDirection.Output); 
 
-                connection.Execute("dbo.spPrizes_Insert", parameters, 
+                connection.Execute("dbo.spPrizes_Insert", 
+                    parameters, 
                     commandType: CommandType.StoredProcedure);
 
                 model.Id = parameters.Get<int>("@id");

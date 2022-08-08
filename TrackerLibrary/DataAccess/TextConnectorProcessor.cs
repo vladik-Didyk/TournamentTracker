@@ -58,14 +58,14 @@ namespace TrackerLibrary.DataAccess.TextHelpers
             {
                 string[] cols = line.Split(',');
 
-                PersonModel p = new PersonModel();
+                PersonModel person = new PersonModel();
 
-                p.Id = int.Parse(cols[0]);
-                p.FirstName = cols[1];
-                p.LastName = cols[2];
-                p.EmailAddress = cols[3];
-                p.CellphoneNumber = cols[4];
-                output.Add(p);
+                person.Id = int.Parse(cols[0]);
+                person.FirstName = cols[1];
+                person.LastName = cols[2];
+                person.EmailAddress = cols[3];
+                person.CellphoneNumber = cols[4];
+                output.Add(person);
             }
 
             return output;
@@ -131,6 +131,8 @@ namespace TrackerLibrary.DataAccess.TextHelpers
                         .FirstOrDefault()
                         );
                 }
+
+                output.Add(team);
             }
 
             return output;

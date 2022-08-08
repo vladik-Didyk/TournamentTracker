@@ -17,18 +17,19 @@ namespace TrackerUI
 
         private List<PersonModel> availableTeamMembers = GlobalConfig.Connection.GetPerson_All();
         private List<PersonModel> selectedTeamMembers = new List<PersonModel>();
+        private ITeamRequester callingForm;
 
 
-        public CreateTeamForm()
+        public CreateTeamForm(ITeamRequester caller)
         {
             InitializeComponent();
+
+            callingForm = caller;
 
             //CreateSampleData();
 
             WireUpLists();
         }
-
-
 
         private void CreateSampleData()
         {
@@ -54,16 +55,7 @@ namespace TrackerUI
 
 
         }
-
-        private void teamOneScoreLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void teamOneScoreValue_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void createMemberButton_Click(object sender, EventArgs e)
         {
@@ -91,6 +83,36 @@ namespace TrackerUI
             {
                 MessageBox.Show("You need to fill in all of the fields.");
             }
+
+        }
+
+        private void addTeamButton_Click(object sender, EventArgs e)
+        {
+            PersonModel person = (PersonModel)selectTeamMemberDropDown.SelectedItem;
+
+            if (person != null)
+            {
+                availableTeamMembers.Remove(person);
+                selectedTeamMembers.Add(person);
+
+                WireUpLists();
+            }
+
+        }
+
+
+        private void removeSelectedMemberButton_Click(object sender, EventArgs e)
+        {
+            PersonModel person = (PersonModel)teamMembersListBox.SelectedItem;
+
+            if (person != null)
+            {
+                availableTeamMembers.Add(person);
+                selectedTeamMembers.Remove(person);
+
+                WireUpLists();
+            }
+
         }
 
         private bool ValidateForm()
@@ -119,35 +141,6 @@ namespace TrackerUI
 
             return true;
         }
-
-        private void addTeamButton_Click(object sender, EventArgs e)
-        {
-            PersonModel person = (PersonModel)selectTeamMemberDropDown.SelectedItem;
-
-            if (person != null)
-            {
-                availableTeamMembers.Remove(person);
-                selectedTeamMembers.Add(person);
-
-                WireUpLists();
-            }
-        }
-
-        private void removeSelectedMemberButton_Click(object sender, EventArgs e)
-        {
-            PersonModel person = (PersonModel)teamMembersListBox.SelectedItem;
-
-            if (person != null)
-            {
-                availableTeamMembers.Add(person);
-                selectedTeamMembers.Remove(person);
-
-                WireUpLists();
-            }
-
-
-        }
-
         private void createTeamButton_Click(object sender, EventArgs e)
         {
             TeamModel newTeam = new TeamModel();
@@ -155,9 +148,11 @@ namespace TrackerUI
             newTeam.TeamName = tournamentNameValue.Text;
             newTeam.TeamMembers = selectedTeamMembers;
 
-            newTeam = GlobalConfig.Connection.CreateTeam(newTeam);
+            GlobalConfig.Connection.CreateTeam(newTeam);
 
-            // TODO - If we aren't closing this from after creation, reset the form
+            callingForm.TeamComplete(newTeam);
+            this.Close();
+
         }
     }
 }
