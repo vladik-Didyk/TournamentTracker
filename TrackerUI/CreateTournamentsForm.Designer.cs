@@ -85,6 +85,7 @@ namespace TrackerUI
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel3);
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel4);
@@ -92,7 +93,7 @@ namespace TrackerUI
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(756, 509);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(751, 504);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // flowLayoutPanel3
@@ -136,6 +137,7 @@ namespace TrackerUI
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(744, 360);
             this.flowLayoutPanel2.TabIndex = 0;
+            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
             // flowLayoutPanel12
             // 
@@ -156,6 +158,7 @@ namespace TrackerUI
             this.flowLayoutPanel8.AutoSize = true;
             this.flowLayoutPanel8.Controls.Add(this.tournamentNameLabel);
             this.flowLayoutPanel8.Controls.Add(this.tournamentNameValue);
+            this.flowLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel8.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel8.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
@@ -165,6 +168,7 @@ namespace TrackerUI
             // tournamentNameLabel
             // 
             this.tournamentNameLabel.AutoSize = true;
+            this.tournamentNameLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.tournamentNameLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tournamentNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.tournamentNameLabel.Location = new System.Drawing.Point(3, 0);
@@ -175,9 +179,10 @@ namespace TrackerUI
             // 
             // tournamentNameValue
             // 
+            this.tournamentNameValue.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tournamentNameValue.Location = new System.Drawing.Point(3, 40);
             this.tournamentNameValue.Name = "tournamentNameValue";
-            this.tournamentNameValue.Size = new System.Drawing.Size(308, 35);
+            this.tournamentNameValue.Size = new System.Drawing.Size(236, 35);
             this.tournamentNameValue.TabIndex = 30;
             // 
             // flowLayoutPanel10
@@ -185,6 +190,7 @@ namespace TrackerUI
             this.flowLayoutPanel10.AutoSize = true;
             this.flowLayoutPanel10.Controls.Add(this.entryFeeLabel);
             this.flowLayoutPanel10.Controls.Add(this.entryFeeValue);
+            this.flowLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel10.Location = new System.Drawing.Point(3, 87);
             this.flowLayoutPanel10.Name = "flowLayoutPanel10";
             this.flowLayoutPanel10.Size = new System.Drawing.Size(314, 41);
@@ -215,6 +221,7 @@ namespace TrackerUI
             this.flowLayoutPanel9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel9.Controls.Add(this.flowLayoutPanel18);
             this.flowLayoutPanel9.Controls.Add(this.selectTeamDropDown);
+            this.flowLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel9.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel9.Location = new System.Drawing.Point(3, 134);
             this.flowLayoutPanel9.Name = "flowLayoutPanel9";
@@ -226,14 +233,16 @@ namespace TrackerUI
             this.flowLayoutPanel18.AutoSize = true;
             this.flowLayoutPanel18.Controls.Add(this.selectTeamLabel);
             this.flowLayoutPanel18.Controls.Add(this.createNewTeamLabel);
+            this.flowLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel18.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel18.Name = "flowLayoutPanel18";
-            this.flowLayoutPanel18.Size = new System.Drawing.Size(282, 37);
+            this.flowLayoutPanel18.Size = new System.Drawing.Size(308, 37);
             this.flowLayoutPanel18.TabIndex = 37;
             // 
             // selectTeamLabel
             // 
             this.selectTeamLabel.AutoSize = true;
+            this.selectTeamLabel.Dock = System.Windows.Forms.DockStyle.Left;
             this.selectTeamLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selectTeamLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.selectTeamLabel.Location = new System.Drawing.Point(3, 0);
@@ -266,14 +275,16 @@ namespace TrackerUI
             this.flowLayoutPanel11.AutoSize = true;
             this.flowLayoutPanel11.Controls.Add(this.addTeamButton);
             this.flowLayoutPanel11.Controls.Add(this.createPrizeButton);
+            this.flowLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel11.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel11.Location = new System.Drawing.Point(3, 227);
             this.flowLayoutPanel11.Name = "flowLayoutPanel11";
-            this.flowLayoutPanel11.Size = new System.Drawing.Size(163, 100);
+            this.flowLayoutPanel11.Size = new System.Drawing.Size(314, 100);
             this.flowLayoutPanel11.TabIndex = 50;
             // 
             // addTeamButton
             // 
+            this.addTeamButton.AutoSize = true;
             this.addTeamButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.addTeamButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.addTeamButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -290,6 +301,7 @@ namespace TrackerUI
             // 
             // createPrizeButton
             // 
+            this.createPrizeButton.AutoSize = true;
             this.createPrizeButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.createPrizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.createPrizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -341,11 +353,12 @@ namespace TrackerUI
             // tournamentsPlayersLabel
             // 
             this.tournamentsPlayersLabel.AutoSize = true;
+            this.tournamentsPlayersLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.tournamentsPlayersLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tournamentsPlayersLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.tournamentsPlayersLabel.Location = new System.Drawing.Point(3, 0);
             this.tournamentsPlayersLabel.Name = "tournamentsPlayersLabel";
-            this.tournamentsPlayersLabel.Size = new System.Drawing.Size(198, 37);
+            this.tournamentsPlayersLabel.Size = new System.Drawing.Size(244, 37);
             this.tournamentsPlayersLabel.TabIndex = 42;
             this.tournamentsPlayersLabel.Text = "Teams / Players";
             // 
@@ -469,6 +482,8 @@ namespace TrackerUI
             // 
             // createTournamentButton
             // 
+            this.createTournamentButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.createTournamentButton.AutoSize = true;
             this.createTournamentButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.createTournamentButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.createTournamentButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -481,13 +496,14 @@ namespace TrackerUI
             this.createTournamentButton.TabIndex = 43;
             this.createTournamentButton.Text = "Create Tournament";
             this.createTournamentButton.UseVisualStyleBackColor = true;
+            this.createTournamentButton.Click += new System.EventHandler(this.createTournamentButton_Click);
             // 
             // CreateTournamentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(756, 509);
+            this.ClientSize = new System.Drawing.Size(751, 504);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
@@ -510,6 +526,7 @@ namespace TrackerUI
             this.flowLayoutPanel18.ResumeLayout(false);
             this.flowLayoutPanel18.PerformLayout();
             this.flowLayoutPanel11.ResumeLayout(false);
+            this.flowLayoutPanel11.PerformLayout();
             this.flowLayoutPanel7.ResumeLayout(false);
             this.flowLayoutPanel7.PerformLayout();
             this.flowLayoutPanel6.ResumeLayout(false);
@@ -523,7 +540,9 @@ namespace TrackerUI
             this.flowLayoutPanel15.PerformLayout();
             this.flowLayoutPanel14.ResumeLayout(false);
             this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
