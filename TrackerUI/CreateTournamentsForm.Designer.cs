@@ -48,7 +48,6 @@ namespace TrackerUI
             this.selectTeamDropDown = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
             this.addTeamButton = new System.Windows.Forms.Button();
-            this.createPrizeButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel17 = new System.Windows.Forms.FlowLayoutPanel();
@@ -64,6 +63,11 @@ namespace TrackerUI
             this.removeSelectedPrizeButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.createTournamentButton = new System.Windows.Forms.Button();
+            this.flowLayoutPanel19 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel20 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.createPrizeButton = new System.Windows.Forms.Button();
+            this.flowLayoutPanel21 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -81,6 +85,7 @@ namespace TrackerUI
             this.flowLayoutPanel15.SuspendLayout();
             this.flowLayoutPanel14.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -273,13 +278,12 @@ namespace TrackerUI
             // flowLayoutPanel11
             // 
             this.flowLayoutPanel11.AutoSize = true;
-            this.flowLayoutPanel11.Controls.Add(this.addTeamButton);
-            this.flowLayoutPanel11.Controls.Add(this.createPrizeButton);
+            this.flowLayoutPanel11.Controls.Add(this.tableLayoutPanel1);
             this.flowLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel11.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel11.Location = new System.Drawing.Point(3, 227);
             this.flowLayoutPanel11.Name = "flowLayoutPanel11";
-            this.flowLayoutPanel11.Size = new System.Drawing.Size(314, 100);
+            this.flowLayoutPanel11.Size = new System.Drawing.Size(314, 102);
             this.flowLayoutPanel11.TabIndex = 50;
             // 
             // addTeamButton
@@ -293,28 +297,11 @@ namespace TrackerUI
             this.addTeamButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.addTeamButton.Location = new System.Drawing.Point(3, 3);
             this.addTeamButton.Name = "addTeamButton";
-            this.addTeamButton.Size = new System.Drawing.Size(157, 44);
+            this.addTeamButton.Size = new System.Drawing.Size(122, 42);
             this.addTeamButton.TabIndex = 36;
             this.addTeamButton.Text = "Add Team";
             this.addTeamButton.UseVisualStyleBackColor = true;
             this.addTeamButton.Click += new System.EventHandler(this.addTeamButton_Click);
-            // 
-            // createPrizeButton
-            // 
-            this.createPrizeButton.AutoSize = true;
-            this.createPrizeButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.createPrizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.createPrizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.createPrizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createPrizeButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createPrizeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.createPrizeButton.Location = new System.Drawing.Point(3, 53);
-            this.createPrizeButton.Name = "createPrizeButton";
-            this.createPrizeButton.Size = new System.Drawing.Size(157, 44);
-            this.createPrizeButton.TabIndex = 37;
-            this.createPrizeButton.Text = "Create Prize";
-            this.createPrizeButton.UseVisualStyleBackColor = true;
-            this.createPrizeButton.Click += new System.EventHandler(this.createPrizeButton_Click);
             // 
             // flowLayoutPanel7
             // 
@@ -375,6 +362,7 @@ namespace TrackerUI
             // flowLayoutPanel16
             // 
             this.flowLayoutPanel16.AutoSize = true;
+            this.flowLayoutPanel16.Controls.Add(this.flowLayoutPanel19);
             this.flowLayoutPanel16.Controls.Add(this.removeSelectedPlayerButton);
             this.flowLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Right;
             this.flowLayoutPanel16.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -391,7 +379,7 @@ namespace TrackerUI
             this.removeSelectedPlayerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeSelectedPlayerButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeSelectedPlayerButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.removeSelectedPlayerButton.Location = new System.Drawing.Point(3, 3);
+            this.removeSelectedPlayerButton.Location = new System.Drawing.Point(3, 62);
             this.removeSelectedPlayerButton.Name = "removeSelectedPlayerButton";
             this.removeSelectedPlayerButton.Size = new System.Drawing.Size(138, 74);
             this.removeSelectedPlayerButton.TabIndex = 42;
@@ -446,6 +434,7 @@ namespace TrackerUI
             // flowLayoutPanel14
             // 
             this.flowLayoutPanel14.AutoSize = true;
+            this.flowLayoutPanel14.Controls.Add(this.flowLayoutPanel20);
             this.flowLayoutPanel14.Controls.Add(this.removeSelectedPrizeButton);
             this.flowLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Right;
             this.flowLayoutPanel14.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -462,7 +451,7 @@ namespace TrackerUI
             this.removeSelectedPrizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeSelectedPrizeButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeSelectedPrizeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.removeSelectedPrizeButton.Location = new System.Drawing.Point(3, 3);
+            this.removeSelectedPrizeButton.Location = new System.Drawing.Point(3, 54);
             this.removeSelectedPrizeButton.Name = "removeSelectedPrizeButton";
             this.removeSelectedPrizeButton.Size = new System.Drawing.Size(138, 76);
             this.removeSelectedPrizeButton.TabIndex = 45;
@@ -473,6 +462,7 @@ namespace TrackerUI
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.AutoSize = true;
+            this.flowLayoutPanel4.Controls.Add(this.flowLayoutPanel21);
             this.flowLayoutPanel4.Controls.Add(this.createTournamentButton);
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 425);
@@ -490,13 +480,66 @@ namespace TrackerUI
             this.createTournamentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createTournamentButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createTournamentButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.createTournamentButton.Location = new System.Drawing.Point(3, 3);
+            this.createTournamentButton.Location = new System.Drawing.Point(251, 3);
             this.createTournamentButton.Name = "createTournamentButton";
             this.createTournamentButton.Size = new System.Drawing.Size(257, 70);
             this.createTournamentButton.TabIndex = 43;
             this.createTournamentButton.Text = "Create Tournament";
             this.createTournamentButton.UseVisualStyleBackColor = true;
             this.createTournamentButton.Click += new System.EventHandler(this.createTournamentButton_Click);
+            // 
+            // flowLayoutPanel19
+            // 
+            this.flowLayoutPanel19.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel19.Name = "flowLayoutPanel19";
+            this.flowLayoutPanel19.Size = new System.Drawing.Size(104, 53);
+            this.flowLayoutPanel19.TabIndex = 46;
+            // 
+            // flowLayoutPanel20
+            // 
+            this.flowLayoutPanel20.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel20.Name = "flowLayoutPanel20";
+            this.flowLayoutPanel20.Size = new System.Drawing.Size(104, 45);
+            this.flowLayoutPanel20.TabIndex = 47;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.AutoSize = true;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.createPrizeButton, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.addTeamButton, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(290, 96);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // createPrizeButton
+            // 
+            this.createPrizeButton.AutoSize = true;
+            this.createPrizeButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.createPrizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.createPrizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.createPrizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createPrizeButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createPrizeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.createPrizeButton.Location = new System.Drawing.Point(148, 3);
+            this.createPrizeButton.Name = "createPrizeButton";
+            this.createPrizeButton.Size = new System.Drawing.Size(139, 42);
+            this.createPrizeButton.TabIndex = 38;
+            this.createPrizeButton.Text = "Create Prize";
+            this.createPrizeButton.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel21
+            // 
+            this.flowLayoutPanel21.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel21.Name = "flowLayoutPanel21";
+            this.flowLayoutPanel21.Size = new System.Drawing.Size(242, 45);
+            this.flowLayoutPanel21.TabIndex = 48;
             // 
             // CreateTournamentsForm
             // 
@@ -541,6 +584,8 @@ namespace TrackerUI
             this.flowLayoutPanel14.ResumeLayout(false);
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -565,7 +610,6 @@ namespace TrackerUI
         private System.Windows.Forms.Label entryFeeLabel;
         private System.Windows.Forms.TextBox entryFeeValue;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel11;
-        private System.Windows.Forms.Button createPrizeButton;
         private System.Windows.Forms.Button addTeamButton;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel13;
@@ -583,5 +627,10 @@ namespace TrackerUI
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel18;
         private System.Windows.Forms.Label selectTeamLabel;
         private System.Windows.Forms.LinkLabel createNewTeamLabel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button createPrizeButton;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel19;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel20;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel21;
     }
 }
